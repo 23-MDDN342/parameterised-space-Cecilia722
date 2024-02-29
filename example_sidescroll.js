@@ -20,28 +20,28 @@ function draw_one_frame(cur_frac) {
   let b1_y = 0.55 * height;
   let b2_y = 0.65 * height;
 
-  let b1_size = height/12;
+  let b1_size = height/100;
   let b2_size = height/6;
 
   let grid_points1 = [
-   -0.25 * width,
+   - 0.01* width,
     0.0 * width,
-    0.25 * width,
-    0.50 * width,
-    0.75 * width,
-    1.00 * width
+    0.01 * width,
+    0.02 * width,
+    0.03* width,
+    0.04 * width
   ]
 
   if (debugView) {
     stroke(255, 0, 0);
-    strokeWeight(height/100);
+    strokeWeight(height/50);
     noFill();
     for(let i=0; i<grid_points1.length; i++) {
       rect(grid_points1[i], b1_y, b1_size, 2*b1_size);
     }    
   }
 
-  fill(100, 100, 100);
+  fill(70, 50, 100);
   noStroke();
   for(let i=0; i<grid_points1.length-1; i++) {
     let cur_x_pos = map(cur_frac, 0, 1, grid_points1[i], grid_points1[i+1])
@@ -56,8 +56,8 @@ function draw_one_frame(cur_frac) {
   ]
 
   if(debugView) {
-    stroke(255, 0, 0);
-    strokeWeight(height/100);
+    stroke(250, 50, 0);
+    strokeWeight(height/50);
     noFill();
     for(let i=0; i<grid_points2.length; i++) {
       rect(grid_points2[i], b2_y, b2_size, 2*b2_size);
