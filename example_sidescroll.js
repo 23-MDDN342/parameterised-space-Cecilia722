@@ -102,21 +102,14 @@ function draw_one_frame(cur_frac) {
   }
 
   fill(color_1);
-  stroke(0,0,0);
-  // for(let i=0; i<grid_points1.length-1; i++) {
-  //   let cur_x_pos = map(cur_frac, 0, 1, grid_points1[i], grid_points1[i+1])
-  //   //rect(cur_x_pos*0.27, b1_y,10*b1_size, 3*b1_size);
-  //   rect(cur_x_pos*0.27, b1_y,10*b1_size, 3*b1_size);
-  //   //silk_1(cur_x_pos*0.27, b1_y,10*b1_size, 3*b1_size)
-  //   silk_1(color_1)
-  // }
+  noStroke()
+
 
   for(let i=0; i<arrayOfColours.length-1; i++) {
     fill(arrayOfColours[i])
     let cur_x_pos = map(cur_frac, 0, 1,grid_points1[i], width*2)
-    //rect(cur_x_pos*0.27, b1_y,10*b1_size, 3*b1_size);
     rect(cur_x_pos - i*width/10, b1_y,20*b1_size, 1*b1_size);
-    //silk_1(cur_x_pos*0.27, b1_y,10*b1_size, 3*b1_size)
+
   
   }
 
