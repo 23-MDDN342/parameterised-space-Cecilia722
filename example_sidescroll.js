@@ -25,21 +25,6 @@ function draw_one_frame(cur_frac) {
   let b2_size = height/6;
 
 
-  let grid_points1 = [
-   - 0.8* width,
-   -0.6 * width,
-    -0.4 * width,
-    -0.2 * width,
-    -0* width,
-    0.2 * width,
-    0.4 * width,
-    0.6* width,
-    0.8 * width,
-   1* width,
-   1.2* width,
-   1.4* width,
-   1.6* width,
-  ]
 
   let color_1 =color("#F0EAD2")
   let color_2 =color("#DDE5B6")
@@ -90,6 +75,21 @@ function draw_one_frame(cur_frac) {
     
   ]
  
+  let grid_points1 = [
+    - 0.8* width,
+    -0.6 * width,
+     -0.4 * width,
+     -0.2 * width,
+     -0* width,
+     0.2 * width,
+     0.4 * width,
+     0.6* width,
+     0.8 * width,
+    1* width,
+    1.2* width,
+    1.4* width,
+    1.6* width,
+   ]
 
   if (debugView) {
     stroke(250, 0, 0);
@@ -100,6 +100,8 @@ function draw_one_frame(cur_frac) {
       rect(grid_points1[i], b1_y, b1_size, 3*b1_size);
     }    
   }
+
+  
 
   fill(color_1);
   noStroke()
@@ -112,6 +114,51 @@ function draw_one_frame(cur_frac) {
 
   
   }
+
+   
+  // let grid_points3= [
+  //   - 0.8* width,
+  //   -0.6 * width,
+  //    -0.4 * width,
+  //    -0.2 * width,
+  //    -0* width,
+  //    0.2 * width,
+  //    0.4 * width,
+  //    0.6* width,
+  //    0.8 * width,
+  //   1* width,
+  //   1.2* width,
+  //   1.4* width,
+  //   1.6* width,
+  //  ]
+
+  // if (debugView) {
+  //   stroke(250, 0, 0);
+ 
+  //   strokeWeight(height/100);
+  //   noFill();
+  //   for(let i=0; i<grid_points3.length; i++) {
+  //     rect(grid_points3[i], b1_y, b1_size, 3*b1_size);
+  //   }    
+  // }
+
+  
+
+  // fill(color_1);
+  // noStroke()
+
+
+  // for(let i=0; i<arrayOfColours.length-1; i++) {
+  //   fill(arrayOfColours[i])
+  //   let cur_x_pos = map(cur_frac, 0, 1,grid_points3[i], width*2)
+  //   rect(cur_x_pos - i*width/10, b1_y,20*b1_size, 1*b1_size);
+
+  
+
+
+
+
+
 
 
 
