@@ -7,9 +7,9 @@ function draw_one_frame(cur_frac) {
   fill("#DDE5B6");
   rect(0, 0, width, height);
 
-  // sun
-  fill(255, 255, 0);
-  ellipse(0.25 * width, 0.10 * height, sun_size);
+  // // sun
+  // fill(255, 255, 0);
+  // ellipse(0.25 * width, 0.10 * height, sun_size);
 
   // grass
   fill(0,0,0);
@@ -25,6 +25,7 @@ function draw_one_frame(cur_frac) {
   let b2_size = height/6;
 
   let silk_space=height/120
+  let b1_fac=height/25
 
 
 
@@ -96,6 +97,12 @@ function draw_one_frame(cur_frac) {
     2.2* width,
     2.4* width,
     2.6* width,
+    2.8*width,
+    3.0*width,
+
+    3.2* width,
+   3.4* width,
+    3.6* width,
     3.8*width,
     4.0*width
 
@@ -109,7 +116,7 @@ function draw_one_frame(cur_frac) {
     noFill();
     for(let i=0; i<arrayOfColours.length-1; i++) {
       cur_x_pos = map(cur_frac, 0, 1,grid_points1[i], width*2)
-      rect(cur_x_pos - i*width/10, b1_y,b1_size*20, b1_size); 
+      rect(cur_x_pos - i*width/10, b1_y,b1_size*b1_fac, b1_size); 
     }    
   }
 
@@ -120,7 +127,7 @@ function draw_one_frame(cur_frac) {
   for(let i=0; i<arrayOfColours.length-1; i++) {
     fill(arrayOfColours[i])
     let cur_x_pos = map(cur_frac, 0, 1,grid_points1[i], width*2)
-    rect(cur_x_pos - i*width/10, b1_y,b1_size*20, b1_size);
+    rect(cur_x_pos - i*width/10, b1_y,b1_size*b1_fac, b1_size);
 
   
   }
@@ -130,7 +137,7 @@ function draw_one_frame(cur_frac) {
   for(let i=0; i<arrayOfColours.length-1; i++) {
     fill(arrayOfColours[i])
     let cur_x_pos = map(cur_frac, 1, 0,grid_points1[i], width*2)
-    rect(cur_x_pos - i*width/10, b1_y,b1_size*20, b1_size);
+    rect(cur_x_pos - i*width/10, b1_y,b1_size*b1_fac, b1_size);
 
   
   }
@@ -139,7 +146,7 @@ function draw_one_frame(cur_frac) {
   for(let i=0; i<arrayOfColours.length-1; i++) {
     fill(arrayOfColours[i])
     let cur_x_pos = map(cur_frac, 1, 0,grid_points1[i], width*2)
-    rect(cur_x_pos - i*width/10-width/20, b1_y-silk_space,b1_size*20, b1_size);
+    rect(cur_x_pos - i*width/10-width/20, b1_y-silk_space,b1_size*b1_fac, b1_size);
 
   
   }
@@ -147,14 +154,14 @@ function draw_one_frame(cur_frac) {
   for(let i=0; i<arrayOfColours.length-1; i++) {
     fill(arrayOfColours[i])
     let cur_x_pos = map(cur_frac, 0, 1,grid_points1[i], width*2)
-    rect(cur_x_pos - i*width/10-width/20, b1_y-silk_space,b1_size*20, b1_size);
+    rect(cur_x_pos - i*width/10-width/20, b1_y-silk_space,b1_size*b1_fac, b1_size);
   
   }
 
   for(let i=0; i<arrayOfColours.length-1; i++) {
     fill(arrayOfColours[i])
     let cur_x_pos = map(cur_frac, 1, 0,grid_points1[i], width*2)
-    rect(cur_x_pos - i*width/10-width/20, b1_y+silk_space,b1_size*20, b1_size);
+    rect(cur_x_pos - i*width/10-width/20, b1_y+silk_space,b1_size*b1_fac, b1_size);
 
   
   }
@@ -162,11 +169,41 @@ function draw_one_frame(cur_frac) {
   for(let i=0; i<arrayOfColours.length-1; i++) {
     fill(arrayOfColours[i])
     let cur_x_pos = map(cur_frac, 0, 1,grid_points1[i], width*2)
-    rect(cur_x_pos - i*width/10-width/20, b1_y+silk_space,b1_size*20, b1_size);
+    rect(cur_x_pos - i*width/10-width/20, b1_y+silk_space,b1_size*b1_fac, b1_size);
   
   }
 
 
+  for(let i=0; i<arrayOfColours.length-1; i++) {
+    fill(arrayOfColours[i])
+    let cur_x_pos = map(cur_frac, 1, 0,grid_points1[i], width*2)
+    rect(cur_x_pos - i*width/10+width/100, b1_y+silk_space*2,b1_size*b1_fac, b1_size);
+
+  
+  }
+
+  for(let i=0; i<arrayOfColours.length-1; i++) {
+    fill(arrayOfColours[i])
+    let cur_x_pos = map(cur_frac, 0, 1,grid_points1[i], width*2)
+    rect(cur_x_pos - i*width/10+width/100, b1_y+silk_space*2,b1_size*b1_fac, b1_size);
+  
+  }
+
+
+  for(let i=0; i<arrayOfColours.length-1; i++) {
+    fill(arrayOfColours[i])
+    let cur_x_pos = map(cur_frac, 1, 0,grid_points1[i], width*2)
+    rect(cur_x_pos - i*width/10+width/100, b1_y-silk_space*2,b1_size*b1_fac, b1_size);
+
+  
+  }
+
+  for(let i=0; i<arrayOfColours.length-1; i++) {
+    fill(arrayOfColours[i])
+    let cur_x_pos = map(cur_frac, 0, 1,grid_points1[i], width*2)
+    rect(cur_x_pos - i*width/10+width/100, b1_y-silk_space*2,b1_size*b1_fac, b1_size);
+  
+  }
 
 
 
@@ -190,8 +227,9 @@ function draw_one_frame(cur_frac) {
   fill(100, 100, 0);
   noStroke();
   for(let i=0; i<grid_points1.length-1; i++) {
-    let cur_x_pos = map(cur_frac, 0, 1, grid_points1[i], grid_points1[i+1])
-    rect(cur_x_pos, b2_y, b2_size, 2*b2_size);
+    let cur_x_pos = map(cur_frac, 0, 1, grid_points1[i], grid_points1[i+1]);
+    let cur_y_pos =map(cur_frac,0,1/10, -7*grid_points1[i], 7*grid_points1[i+1])
+    rect(cur_x_pos, b2_y+cur_y_pos/1000, b2_size, 2*b2_size);
   }
 
   function silk_1(silkColor){
