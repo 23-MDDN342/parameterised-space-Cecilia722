@@ -11,9 +11,7 @@ function draw_one_frame(cur_frac) {
   // fill(255, 255, 0);
   // ellipse(0.25 * width, 0.10 * height, sun_size);
 
-  // grass
-  fill(0, 0, 0);
-  rect(0, height / 1.92, width, height / 2);
+ 
 
   stroke(0);
   fill(100, 100, 100);
@@ -24,8 +22,8 @@ function draw_one_frame(cur_frac) {
   let b1_size = height / 150;
   let b2_size = height / 5.1;
 
-  let silk_space = height / 150
-  let b1_fac = height / 60
+  let silk_space = height / 155.
+  let b1_fac = height / 40
 
 
 
@@ -53,7 +51,7 @@ function draw_one_frame(cur_frac) {
     color_9,
     color_10,
 
-    color_1,
+    color_5,
     color_10,
     color_3,
     color_4,
@@ -64,7 +62,7 @@ function draw_one_frame(cur_frac) {
     color_9,
     color_10,
 
-    color_1,
+    color_5,
     color_6,
     color_3,
     color_4,
@@ -100,17 +98,11 @@ function draw_one_frame(cur_frac) {
     2.8 * width,
     3.0 * width,
 
-    3.2 * width,
-    3.4 * width,
-    3.6 * width,
-    3.8 * width,
-    4.0 * width,
+  
 
-    4.2 * width,
-    4.4 * width,
-    4.6 * width,
-    4.8 * width,
-    5.0 * width,
+
+    
+
 
 
 
@@ -164,27 +156,28 @@ function draw_one_frame(cur_frac) {
     }
   }
 
-let b1_fac_2 = height/40
+let b1_fac_2 = width*100
 
   noStroke()
   for (let ii = 0; ii < 6; ii++) {
-    for (let i = 0; i < arrayOfColours.length - 1; i++) {
-      fill(arrayOfColours[i])
-      let cur_x_pos = map(cur_frac, 0, 1, grid_points1[i] - width, width * 2)
-      cur_x_pos_reverse = map(cur_frac, 1, 0, grid_points1[i] - width, width * 2)
+    for (let i = 0; i < grid_points1.length-1; i++) {
+      fill(255,249,191)
+      let cur_x_pos = map(cur_frac, -1, 1, grid_points1[i], width /2)
+     let cur_x_pos_reverse = map(cur_frac, 1, -1, grid_points1[i], width /2)
 
 
-      rect(cur_x_pos - i * width / 20, b1_y * ii, b1_size * b1_fac_2, b1_size);
-      rect(cur_x_pos_reverse - i * width / 20, b1_y * ii- width / 30, b1_size * b1_fac_2, b1_size);
-
+      rect(cur_x_pos, ii*b1_y- width / 35, width*10, b1_size*1.5);
+      rect(cur_x_pos_reverse, ii*b1_y- width / 35, width*10, b1_size*1.5);
       
+
+
+
+
+
 
 
     }
   }
-
-
-
 
 
 
@@ -204,7 +197,15 @@ let b1_fac_2 = height/40
     1.4 * width,
     1.6 * width,
     1.8 * width,
-    2.0 * width
+    2.0 * width,
+
+    2.2 * width,
+    2.4 * width,
+    2.6 * width,
+    2.8 * width,
+    3.0 * width,
+
+  
   ]
 
 
@@ -233,7 +234,12 @@ let b1_fac_2 = height/40
   ]
 
 
-
+ // grass
+ fill(0, 0, 0);
+ rect(0, height / 1.92, width, height / 2);
+ 
+ fill(255,249,191);
+ rect(0, height / 1.922, width, height /30);
 
 
 
@@ -246,6 +252,17 @@ let b1_fac_2 = height/40
     }
   }
 
+  fill(255,249,191);
+  noStroke();
+  for (let i = 0; i < grid_pointX.length - 1; i++) {
+    let cur_x_pos = map(cur_frac, 0, 1, grid_pointX[i], grid_pointX[i + 1]);
+    let cur_y_pos = map(cur_frac, 0, 1, grid_pointY[i], grid_pointY[i + 1])
+    rect(cur_x_pos, cur_y_pos+height/1.9 , b2_size/30, b2_size/3);
+    rect(cur_x_pos+width/100, cur_y_pos+height/1.9 , b2_size/30, b2_size/3);
+    rect(cur_x_pos+2*width/100, cur_y_pos+height/1.9 , b2_size/30, b2_size/3);
+    rect(cur_x_pos+3*width/100, cur_y_pos+height/1.9 , b2_size/30, b2_size/3);
+  }
+
   fill(100, 100, 0);
   noStroke();
   for (let i = 0; i < grid_pointX.length - 1; i++) {
@@ -253,6 +270,7 @@ let b1_fac_2 = height/40
     let cur_y_pos = map(cur_frac, 0, 1, grid_pointY[i], grid_pointY[i + 1])
     rect(cur_x_pos, cur_y_pos + height / 1.5, b2_size, 2 * b2_size);
   }
+  
 
   function silk_1(silkColor) {
 
